@@ -58,10 +58,15 @@ export function LoginPage() {
             {loading ? <Loader2 className="spin" size={18} /> : null}
             Sign in
           </Button>
+          
+          <div style={{ margin: "20px 0", textAlign: "center" }}>
+            <p style={{ fontSize: "14px", marginBottom: "12px", color: "var(--muted)" }}>Looking for the active broadcast?</p>
+            <Button type="button" variant="secondary" className="wide" onClick={() => navigate("/live")}>
+              Select a Classroom (No Login Required)
+            </Button>
+          </div>
+
           <div className="demo-grid">
-            <button type="button" onClick={() => navigate("/live/teacher-1")}>
-              Public live preview
-            </button>
             <span>Principal: principal@school.edu</span>
             <span>Teacher: teacher@school.edu</span>
           </div>

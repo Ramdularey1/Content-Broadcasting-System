@@ -167,11 +167,12 @@ button:disabled { cursor: not-allowed; opacity: 0.62; }
 .compact-list span, .approval-strip span { display: block; color: var(--muted); margin-top: 4px; }
 
 .toolbar { display: flex; gap: 12px; margin-bottom: 16px; }
+.toolbar select { width: auto; min-width: 160px; }
 .search-input { position: relative; flex: 1; }
 .search-input svg { position: absolute; left: 12px; top: 13px; color: var(--muted); }
 .search-input input { padding-left: 38px; }
-.table-shell { border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
-.table-scroll { overflow: auto; }
+.table-shell { border: 1px solid var(--line); border-radius: 8px; overflow: hidden; max-width: 100%; }
+.table-scroll { overflow-x: auto; width: 100%; -webkit-overflow-scrolling: touch; }
 table { width: 100%; border-collapse: collapse; min-width: 880px; }
 th, td { padding: 13px 14px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: middle; }
 th { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; background: #f9fbfd; }
@@ -293,18 +294,26 @@ th { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spa
 @media (max-width: 980px) {
   .login-page, .app-shell, .upload-grid { grid-template-columns: 1fr; }
   .login-visual { min-height: 42vh; }
-  .sidebar { position: static; height: auto; }
+  .sidebar { position: static; height: auto; flex-direction: row; flex-wrap: wrap; justify-content: space-between; align-items: center; padding: 16px; }
+  .sidebar nav { margin-top: 0; display: flex; flex-direction: row; gap: 8px; flex-wrap: wrap; width: 100%; }
+  .sidebar nav button { flex: 1; justify-content: center; text-align: center; }
+  .logout { margin-top: 10px; width: 100%; justify-content: center; }
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
-  .topbar { align-items: flex-start; flex-direction: column; }
+  .topbar { align-items: flex-start; flex-direction: row; flex-wrap: wrap; }
 }
 
 @media (max-width: 640px) {
-  .main-panel, .live-page { padding: 16px; }
-  .stats-grid, .form-row, .preview-panel dl { grid-template-columns: 1fr; }
-  .toolbar, .pagination, .live-header, .live-tools { flex-direction: column; align-items: stretch; }
-  .auth-card { padding: 24px; }
-  .broadcast-card h1 { font-size: 42px; }
+  .main-panel, .live-page { padding: 12px; }
+  .stats-grid { grid-template-columns: 1fr; }
+  .form-row, .preview-panel dl { grid-template-columns: 1fr; }
+  .toolbar, .pagination, .live-header, .live-tools { flex-direction: column; align-items: stretch; gap: 10px; }
+  .auth-card { padding: 24px 16px; }
+  .broadcast-card h1 { font-size: 32px; }
+  .sidebar nav button { flex: 1 1 45%; }
   .compact-list article { grid-template-columns: 52px 1fr; }
   .compact-list article .badge { grid-column: 2; justify-self: start; }
-  .live-caption { left: 20px; bottom: 20px; }
+  .live-caption { left: 16px; bottom: 16px; right: 16px; padding-right: 0; }
+  .live-caption h1 { font-size: 32px; }
+  .table-shell { border-radius: 4px; border-left: 0; border-right: 0; }
+  .app-shell { overflow-x: hidden; }
 }

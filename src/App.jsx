@@ -8,6 +8,7 @@ import { AllContentPage } from "./pages/principal/AllContentPage";
 import { ApprovalsPage } from "./pages/principal/ApprovalsPage";
 import { PrincipalDashboard } from "./pages/principal/PrincipalDashboard";
 import { LivePage } from "./pages/public/LivePage";
+import { SelectTeacherPage } from "./pages/public/SelectTeacherPage";
 import { MyContentPage } from "./pages/teacher/MyContentPage";
 import { TeacherDashboard } from "./pages/teacher/TeacherDashboard";
 import { UploadContentPage } from "./pages/teacher/UploadContentPage";
@@ -46,6 +47,10 @@ function Router() {
 
   if (path === "/" || path === "/login") {
     return <LoginPage />;
+  }
+
+  if (path === "/live") {
+    return <SelectTeacherPage />;
   }
 
   if (path.startsWith("/live/")) {

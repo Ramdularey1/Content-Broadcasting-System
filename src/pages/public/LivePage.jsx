@@ -10,6 +10,7 @@ export function LivePage({ teacherId }) {
   const [error, setError] = useState("");
   const [updatedAt, setUpdatedAt] = useState(null);
 
+  
   async function load() {
     setLoading(true);
     setError("");

@@ -62,7 +62,7 @@ export function LoginPage() {
           <div style={{ margin: "20px 0", textAlign: "center" }}>
             <p style={{ fontSize: "14px", marginBottom: "12px", color: "var(--muted)" }}>Looking for the active broadcast?</p>
             <Button type="button" variant="secondary" className="wide" onClick={() => navigate("/live")}>
-              Select a Classroom (No Login Required)
+              Student Login
             </Button>
           </div>
 

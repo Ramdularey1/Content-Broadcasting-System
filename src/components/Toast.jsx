@@ -12,6 +12,7 @@ export function ToastProvider({ children }) {
     setTimeout(() => setToasts((items) => items.filter((item) => item.id !== id)), 3400);
   }, []);
 
+  
   const value = useMemo(() => ({ notify }), [notify]);
 
   return (
